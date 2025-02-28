@@ -71,5 +71,5 @@ Feel free to submit issues or pull requests to improve this project!
 This project is open-source and available under the MIT License.
 
 ---
-**Maintained by [Your Name]**
+**Maintained by: Mary Margarette Mariano**
 
