@@ -28,3 +28,7 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
+      - name: Clean Flutter Cache
+        run: flutter clean
+
+
