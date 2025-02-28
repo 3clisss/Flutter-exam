@@ -13,11 +13,15 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.2'
+          flutter-version: '3.22.2'  # Match your local version
           channel: 'stable'
 
-      - name: Setup Dart 3.4.3
+      - name: Add Dart Repository and Install Dart 3.4.3
         run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https
+          sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor > /usr/share/keyrings/dart.gpg'
+          echo 'deb [signed-by=/usr/share/keyrings/dart.gpg] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart.list
           sudo apt-get update
           sudo apt-get install dart -y
           dart --version  # Verify Dart version
